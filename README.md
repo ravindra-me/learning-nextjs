@@ -118,3 +118,46 @@ export default function Page() {
 }
 
 ```
+
+# 🚀 Parallel Routes in Next.js
+
+## 📖 Overview
+
+Parallel Routes in Next.js allow rendering multiple UI sections independently, improving performance and modularity. This is useful for dashboards, split-screen layouts, and apps requiring independent UI updates.
+
+```sh
+app/
+│-- layout.tsx
+│-- page.tsx
+│-- (dashboard)/
+│   │-- @analytics/page.tsx
+│   │-- @reports/page.tsx
+│-- (profile)/
+│   │-- @settings/page.tsx
+│   │-- @activity/page.tsx
+```
+
+#### (dashboard) and (profile) are parallel route groups.
+
+#### Each group loads independently while maintaining layout consistency.
+
+```sh
+export default function RootLayout({
+  children,
+  dashboard,
+  profile
+}: {
+  children: React.ReactNode,
+  dashboard: React.ReactNode,
+  profile: React.ReactNode
+}) {
+  return (
+    <div className="app-container">
+      <main>{children}</main>
+      <section className="dashboard-section">{dashboard}</section>
+      <aside className="profile-section">{profile}</aside>
+    </div>
+  );
+}
+
+```
