@@ -14,9 +14,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <header>Header</header>
+        <header
+          style={{ padding: "16px ", backgroundColor: "lightblue" }}
+          className="p-4 bg-light-gray"
+        >
+          Header
+        </header>
         {children}
-        <footer>Footer</footer>
+        <footer style={{ padding: "16px ", backgroundColor: "lightblue" }}>
+          Footer
+        </footer>
       </body>
     </html>
   );
