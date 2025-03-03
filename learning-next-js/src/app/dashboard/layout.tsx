@@ -12,8 +12,10 @@ function DashboardLayout({
   return (
     <div>
       <div>{children}</div>
-      {notification}
-      {profile}
+      <div className="flex gap-16">
+        {profile}
+        <div>{notification}</div>
+      </div>
     </div>
   );
 }
